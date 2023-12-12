@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+
+:root{
+  --color:#106D64;
+  --white:#fff;
+  --black:#333;
+  --light-color:#666;
+  --light-white:rgba(255,255,255,.6);
+  --box-shadow:0 .2rem .5rem rgba(0,0,0,.3);
+}
+
+*{
+  font-family: 'Montserrat', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+  text-decoration: none;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+
+body{
+  overflow-x: hidden;
+}
+
+section{
+  padding:3rem 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.heading{
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.heading h1{
+  display: inline-block;
+  font-size: 3.5rem;
+  color:var(--color);
+  position: relative;
+  letter-spacing: .2rem;
+}
+
+.heading h1::before, .heading h1::after{
+  content: '';
+  position: absolute;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-top:.4rem solid var(--color);
+  border-left:.4rem solid var(--color);
+}
+
+.heading h1::before{
+  top:-.5rem; left: -2rem;
+}
+
+.heading h1::after{
+  bottom:-.5rem; right:-2rem;
+  transform: rotate(180deg);
+}
+
+.header{
+  position: fixed;
+  top:0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .flex{
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  justify-content: space-between;
+}
+
+.header .flex .logo{
+  font-size: 2.5rem;
+  color:var(--white);
+
+}
+
+.logo-container{
+  width: 12rem; 
+  height: 10rem;
+  background-image: url(../images/logo2.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position:left;
+
+
+}
+.home{
+  background:linear-gradient(#edfbfc, var(--color));
+  padding:0 1rem;
+  position: relative;
+  overflow: hidden !important;
+}
+
+.home .content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.home .content h1{
+  color:var(--white);
+  font-size: 5rem;
+  text-shadow: var(--box-shadow);
+}
+
+/* glow efect for POWERFUL word -starts- */
+.home .content h1 span{
+  color:#ffffff;
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  animation: glow 1s infinite alternate;
+  font-size: 8rem;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Initial glow effect */
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Final glow effect */
+  }
+}
+
+
+.home .content p{
+  color:var(--light-white);
+  font-size: 2.5rem;
+  padding: 1rem 0;
+}
+
+
+.home .wave{
+  position: absolute;
+  bottom: -.5rem;
+  left: 0;
+  height:11rem;
+  width: 100%;
+  background: url(../images/wave.png);
+  background-size: 100rem 11rem;
+  background-repeat: repeat-x;
+  animation:waves 10s linear infinite;
+}
+
+.home .wave2{
+  animation-direction: reverse;
+  opacity: .2;
+}
+
+.home .wave3{
+  animation-duration: 4s;
+  opacity: .5;
+}
+
+@keyframes waves{
+  0%{
+    background-position-x: 0;
+  }
+  100%{
+    background-position-x: 100rem;
+  }
+}
+
+.home .fa-cog{
+  position: absolute;
+  font-size: 30rem;
+  opacity: .15;
+  color:var(--white);
+  animation: rotate 10s linear infinite;
+}
+
+.home .nut1{
+  top:10%; left: -15rem;
+}
+
+.home .nut2{
+  bottom:23%; right: -13rem;
+  animation-direction: reverse;
+}
+
+@keyframes rotate{
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.footer{
+  background:var(--color);
+}
+
+.footer .flex{
+  display: flex;
+  align-items: center;
+
+}
+
+.footer .flex .credit{
+  color:var(--white);
+  font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+  html{
+    font-size: 55%;
+  }
+
+}
+
+@media (max-width:768px){
+  .header .flex .fa-bars{
+    display: block;
+  }
+
+  .header .fa-times{
+    transform: rotate(180deg);
+  }
+
+  .home .content h1{
+    font-size: 3rem;
+  }
+  .home .content p{
+    font-size: 2rem;
+  }
+
+  .footer .flex{
+    flex-flow: column;
+    text-align: center;
+  }
+ 
+}
+
+@media (max-width:450px){
+  html{
+    font-size: 50%;
+  }
+}
